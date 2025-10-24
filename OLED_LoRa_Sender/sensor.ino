@@ -1,24 +1,21 @@
-/*inclusão das bibliotecas necessárias*/
 #include <OneWire.h>  
 #include <DallasTemperature.h>
-/********************************************************************/
+
 
 #define dados 22 /*o pino de dados do sensor está ligado na porta 2 do Arduino*/
 
-OneWire oneWire(dados);  /*Protocolo OneWire*/
-/********************************************************************/
-DallasTemperature sensors(&oneWire); /*encaminha referências OneWire para o sensor*/
-/********************************************************************/ 
-void setupSensor() /*laço de configuração*/
+OneWire oneWire(dados); 
+
+DallasTemperature sensors(&oneWire); 
+
+void setupSensor() 
 { 
- 
- sensors.begin(); /*inicia biblioteca*/
+ sensors.begin();
 } 
-String Temperatura() /*laço de repetição*/
+String Temperatura()
 { 
 
- sensors.requestTemperatures(); /* Envia o comando para leitura da temperatura */
-
-  String temp = String(sensors.getTempCByIndex(0));
-  return temp; /* Endereço do sensor */
+ sensors.requestTemperatures();
+ String temp = String(sensors.getTempCByIndex(0));
+ return temp;
 }
