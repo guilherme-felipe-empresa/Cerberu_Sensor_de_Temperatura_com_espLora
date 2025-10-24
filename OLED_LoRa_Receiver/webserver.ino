@@ -32,7 +32,7 @@ void handleNotFound() {
 }
 
 String IP = "10.240.12.99";
-IPAddress local_IP(10,240,12,99); // ip fixo do de rede
+IPAddress local_IP(10,240,12,99); // ip fixo da rede
 IPAddress gateway(10,240,12,30);
 IPAddress subnet(255,255,0,0);
 IPAddress primaryDNS(8,8,8,8);
@@ -101,7 +101,6 @@ void loop(void) {
       Serial.println(packet);
     }
     server.handleClient();
-   // delay(.1);//allow the cpu to switch to other tasks
     
     }
    
